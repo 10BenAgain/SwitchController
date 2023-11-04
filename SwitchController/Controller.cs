@@ -9,6 +9,7 @@ namespace SwitchController
         {
             Bot = new SysbotBase("192.168.86.42");
             InitializeComponent();
+            KeyPreview = true;
         }
         private void Controller_Load(object sender, EventArgs e)
         {
@@ -92,5 +93,96 @@ namespace SwitchController
         private void AButton_MouseDown(object sender, MouseEventArgs e) => TrySend(Buttons.SwitchButton.A, 1);
         private void AButton_MouseUp(object sender, MouseEventArgs e) => TrySend(Buttons.SwitchButton.A, 2);
 
+        private void Controller_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyValue)
+            {
+                case (int)Keys.W:
+                case (int)Keys.Up:
+                    TrySend(Buttons.SwitchButton.DUP, 1);
+                    break;
+                case (int)Keys.S:
+                case (int)Keys.Down:
+                    TrySend(Buttons.SwitchButton.DDOWN, 1);
+                    break;
+                case (int)Keys.D:
+                case (int)Keys.Right:
+                    TrySend(Buttons.SwitchButton.DRIGHT, 1);
+                    break;
+                case (int)Keys.A:
+                case (int)Keys.Left:
+                    TrySend(Buttons.SwitchButton.DLEFT, 1);
+                    break;
+                case (int)Keys.X:
+                    TrySend(Buttons.SwitchButton.A, 1);
+                    break;
+                case (int)Keys.Z:
+                    TrySend(Buttons.SwitchButton.B, 1);
+                    break;
+                case (int)Keys.C:
+                    TrySend(Buttons.SwitchButton.Y, 1);
+                    break;
+                case (int)Keys.V:
+                    TrySend(Buttons.SwitchButton.X, 1);
+                    break;
+                case (int)Keys.Q:
+                    TrySend(Buttons.SwitchButton.L, 1);
+                    break;
+                case (int)Keys.E:
+                    TrySend(Buttons.SwitchButton.R, 1);
+                    break;
+                case (int)Keys.R:
+                    TrySend(Buttons.SwitchButton.HOME, 1);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void Controller_KeyUp(object sender, KeyEventArgs e)
+        {
+            switch (e.KeyValue)
+            {
+                case (int)Keys.W:
+                case (int)Keys.Up:
+                    TrySend(Buttons.SwitchButton.DUP, 2);
+                    break;
+                case (int)Keys.S:
+                case (int)Keys.Down:
+                    TrySend(Buttons.SwitchButton.DDOWN, 2);
+                    break;
+                case (int)Keys.D:
+                case (int)Keys.Right:
+                    TrySend(Buttons.SwitchButton.DRIGHT, 2);
+                    break;
+                case (int)Keys.A:
+                case (int)Keys.Left:
+                    TrySend(Buttons.SwitchButton.DLEFT, 2);
+                    break;
+                case (int)Keys.X:
+                    TrySend(Buttons.SwitchButton.A, 2);
+                    break;
+                case (int)Keys.Z:
+                    TrySend(Buttons.SwitchButton.B, 2);
+                    break;
+                case (int)Keys.C:
+                    TrySend(Buttons.SwitchButton.Y, 2);
+                    break;
+                case (int)Keys.V:
+                    TrySend(Buttons.SwitchButton.X, 2);
+                    break;
+                case (int)Keys.Q:
+                    TrySend(Buttons.SwitchButton.L, 2);
+                    break;
+                case (int)Keys.E:
+                    TrySend(Buttons.SwitchButton.R, 2);
+                    break;
+                case (int)Keys.R:
+                    TrySend(Buttons.SwitchButton.HOME, 2);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

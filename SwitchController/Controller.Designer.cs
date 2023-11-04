@@ -153,7 +153,7 @@
             // 
             // XButton
             // 
-            XButton.Location = new Point(37, 77);
+            XButton.Location = new Point(36, 20);
             XButton.Name = "XButton";
             XButton.Size = new Size(25, 25);
             XButton.TabIndex = 4;
@@ -165,7 +165,7 @@
             // 
             // BButton
             // 
-            BButton.Location = new Point(37, 15);
+            BButton.Location = new Point(36, 71);
             BButton.Name = "BButton";
             BButton.Size = new Size(25, 25);
             BButton.TabIndex = 5;
@@ -305,6 +305,8 @@
             Name = "Controller";
             Text = "Controller";
             Load += Controller_Load;
+            KeyDown += Controller_KeyDown;
+            KeyUp += Controller_KeyUp;
             DPADGroupBox.ResumeLayout(false);
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
